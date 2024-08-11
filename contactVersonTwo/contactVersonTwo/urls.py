@@ -1,5 +1,5 @@
 """
-URL configuration for contact project.
+URL configuration for contactVersonTwo project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,15 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from rest_framework import routers
-from contact_app.views import ContactViewSet
-
-# site registrations unlike regular jango syntax(admin.site.register())
-
-router = routers.DefaultRouter()
-router.register(r'contact_app', ContactViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/',include(router.urls)),
+    path('',include('Api.urls'))
 ]
